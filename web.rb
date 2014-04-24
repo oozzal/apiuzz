@@ -1,4 +1,13 @@
 require 'sinatra'
+# require 'pry'
+load 'lib/uzz/score_parser.rb'
+
 get '/' do
-  "Hello, world. Welcome to my API World"
+  Uzz::ScoreParser.parse.gsub(/\n/, "<br>")
+end
+
+post '/' do
+  # keyword = params["keyword"]
+  # from = params["from"]
+  Uzz::ScoreParser.parse
 end
