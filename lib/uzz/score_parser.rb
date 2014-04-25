@@ -3,7 +3,7 @@ require 'open-uri'
 
 module Uzz
   class ScoreParser
-    def self.parse(country = "England", type = "Premier League", date = "2014-04-27")
+    def self.parse(country = "England", type = "Premier League", date = "")
       url = "http://www.livescores.com/soccer/#{date}/"
       doc = Nokogiri::HTML(open(url));nil
       my_table = doc.css(".league-table:not(.mtn)").detect do |table|
