@@ -1,9 +1,10 @@
 require 'sinatra'
-# require 'pry'
-load 'lib/uzz/score_parser.rb'
+require 'pry'
+require_relative './lib/uzz'
 
 get '/' do
   Uzz::ScoreParser.parse
+  # Uncomment in Development
   # Uzz::ScoreParser.parse.gsub(/\n/, "<br>")
 end
 
