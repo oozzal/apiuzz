@@ -3,9 +3,7 @@ require 'pry'
 require_relative './lib/uzz'
 
 get '/' do
-  Uzz::ScoreParser.parse
-  # Uncomment in Development
-  # Uzz::ScoreParser.parse.gsub(/\n/, "<br>")
+  params[:view] == "clean" ? Uzz::ScoreParser.parse.gsub(/\n/, "<br><br>") : Uzz::ScoreParser.parse
 end
 
 post '/' do

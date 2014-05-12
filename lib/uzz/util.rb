@@ -7,10 +7,10 @@ module Uzz
       "Chelsea" => "CHE",
       "Arsenal" => "ARS",
       "Everton" => "EVE",
-      "Tottenham" => "TOT",
+      "Tottenham Hotspur" => "TOT",
       "Manchester United" => "MUTD",
       "Southampton" => "SOU",
-      "Newcastle" => "NEW",
+      "Newcastle United" => "NEW",
       "Stoke City" => "STO",
       "Crystal Palace" => "CRY",
       "West Ham United" => "WHU",
@@ -19,7 +19,7 @@ module Uzz
       "Hull City" => "HUL",
       "West Bromwich Albion" => "WBA",
       "Sunderland" => "SUN",
-      "Norwich" => "NOR",
+      "Norwich City" => "NOR",
       "Fulham" => "FUL",
       "Cardiff City" => "CAR"
     }
