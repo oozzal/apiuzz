@@ -21,7 +21,7 @@ module Uzz
       "Sunderland" => "SUN",
       "Norwich" => "NOR",
       "Fulham" => "FUL",
-      "Cardiff" => "CAR"
+      "Cardiff City" => "CAR"
     }
   end
 end

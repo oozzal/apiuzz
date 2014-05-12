@@ -9,8 +9,8 @@ get '/' do
 end
 
 post '/' do
-  # keyword = params["keyword"]
-  # from = params["from"]
-  # date = params["date"]
+  # from = $_GET["from"] // the sms sender
+  # keyword = $_GET["keyword"] // first word
+  # text = $_GET["text"] // the word(s) after the first word
   Uzz::ScoreParser.parse
 end
