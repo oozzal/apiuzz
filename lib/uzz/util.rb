@@ -1,6 +1,7 @@
 module Uzz
   class Util
-    CLUBS_CLASSES = ["fh", "fa"]
+    TEAMS_CLASSES = ["fh", "fa"]
+
     CLUBS_INFO = {
       "Liverpool" => "LIV",
       "Manchester City" => "MCITY",
@@ -22,6 +23,48 @@ module Uzz
       "Norwich City" => "NOR",
       "Fulham" => "FUL",
       "Cardiff City" => "CAR"
+    }
+
+    COUNTRIES_INFO = {
+      "Brazil" => "BRA",
+      "Cameroon" => "CAM",
+      "Croatia" => "CRO",
+      "Mexico" => "MEX",
+
+      "Australia" => "AUS",
+      "Chile" => "CHI",
+      "Netherlands" => "HOL",
+      "Spain" => "ESP",
+
+      "Colombia" => "COL",
+      "Greece" => "GRE",
+      "Ivory Coast" => "IVO",
+      "Japan" => "JPN",
+
+      "Costa Rica" => "COS",
+      "England" => "ENG",
+      "Italy" => "ITA",
+      "Uruguay" => "URU",
+
+      "Ecuador" => "ECU",
+      "France" => "FRA",
+      "Honduras" => "HON",
+      "Switzerland" => "SWI",
+
+      "Argentina" => "ARG",
+      "Bosnia-Herzegovina" => "BOS",
+      "Iran" => "IRN",
+      "Nigeria" => "NIG",
+
+      "Germany" => "GER",
+      "Ghana" => "GHA",
+      "Portugal" => "POR",
+      "USA" => "USA",
+
+      "Algeria" => "ALG",
+      "Belgium" => "BEL",
+      "Russia" => "RUS",
+      "South Korea" => "KOR"
     }
   end
 end

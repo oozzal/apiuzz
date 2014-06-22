@@ -16,7 +16,7 @@ module Uzz
       if my_table
         my_table.css("tr>td").each_with_index do |e, index|
           txt = e.text.strip.squeeze(" ")
-          txt = Uzz::Util::CLUBS_INFO[txt] if Uzz::Util::CLUBS_CLASSES.include?(e.attributes["class"].value)
+          txt = Uzz::Util::CLUBS_INFO[txt] if Uzz::Util::TEAMS_CLASSES.include?(e.attributes["class"].value)
           final_string += txt.to_s
           if index != 0 && (index+1) % 4 == 0
             final_string += "\n"
