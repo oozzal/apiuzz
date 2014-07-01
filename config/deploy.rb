@@ -1,7 +1,7 @@
 #require 'rvm/capistrano'
 #require 'bundler/setup'
 #require 'bundler/capistrano'
-
+# require 'capistrano3/unicorn'
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
@@ -46,18 +46,35 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      run "cd #{release_path};bundle exec unicorn -c config/unicorn.rb"
-    end
+#    invoke "unicorn:restart"
+    invoke "unicorn:stop"
+    invoke "unicorn:start"
   end
 
   task :gems_install do
     on roles(:app), in: :sequence, wait: 3 do
-      run "cd #{release_path};bundle"
+      execute "cd #{release_path} && bundle install"
     end
   end
-
-  after :publishing, :restart
-  after :publishing, :gems_install
-
 end
+
+namespace :unicorn do
+  desc "Stop the Unicorn Server"
+  task :stop do
+    on roles(:app) do
+      execute "cat /tmp/pids/unicorn.pid | xargs kill -QUIT" if File.exists?("/tmp/pids/unicorn.pid")
+    et
+    n
+  end
+
+  desc "Start the Unicorn Server"
+  task :start do
+    on roles(:app) do
+      execute "cd #{release_path} && bundle exec unicorn -c config/unicorn.rb"
+    end
+  end
+end
+
+after "deploy:publishing", "deploy:gems_install"
+after "deploy:gems_install", "deploy:restart"
+
