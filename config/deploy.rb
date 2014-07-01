@@ -63,8 +63,7 @@ namespace :unicorn do
   task :stop do
     on roles(:app) do
       execute "cat /tmp/pids/unicorn.pid | xargs kill -QUIT" if File.exists?("/tmp/pids/unicorn.pid")
-    et
-    n
+    end
   end
 
   desc "Start the Unicorn Server"
@@ -72,6 +71,14 @@ namespace :unicorn do
     on roles(:app) do
       execute "cd #{release_path} && bundle exec unicorn -c config/unicorn.rb"
     end
+  end
+end
+
+# A dummy namespace to test the tasks and configurations
+namespace :test do
+  desc "Check the available variables"
+  task :vars do
+    puts "remote=#{remote}"
   end
 end
 
