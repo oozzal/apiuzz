@@ -22,7 +22,10 @@ module Uzz
       "Sunderland" => "SUN",
       "Norwich City" => "NOR",
       "Fulham" => "FUL",
-      "Cardiff City" => "CAR"
+      "Cardiff City" => "CAR",
+      "Leicester City" => "LEI",
+      "Queens Park Rangers" => "QPR",
+      "Burnley" => "BUR"
     }
 
     COUNTRIES_INFO = {
@@ -68,3 +71,4 @@ module Uzz
     }
   end
 end
+

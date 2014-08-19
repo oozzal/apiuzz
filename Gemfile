@@ -10,5 +10,6 @@ group :development, :test do
   gem 'pry'
   gem 'rvm1-capistrano3', :require => false
   gem 'capistrano3-unicorn'
+  gem 'capistrano-rvm'
 end
 

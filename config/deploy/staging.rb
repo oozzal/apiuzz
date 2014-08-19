@@ -4,9 +4,14 @@
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-role :app, %w{vagrant@192.168.1.5}
-role :web, %w{vagrant@192.168.1.5}
-role :db,  %w{vagrant@192.168.1.5}
+# pass remote via "cap staging deploy -s remote=192.168.2.91
+# set :remote, fetch(:remote, "192.168.1.5")
+remote = fetch(:remote, "192.168.2.91")
+remote = "vagrant@#{remote}"
+
+role :app, remote
+role :web, remote
+role :db,  remote
 
 # Extended Server Syntax
 # ======================
@@ -14,7 +19,7 @@ role :db,  %w{vagrant@192.168.1.5}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server '192.168.1.5', user: 'vagrant', roles: %w{web app}
+server remote, user: "vagrant", roles: %w{web app}
 
 # Custom SSH Options
 # ==================
