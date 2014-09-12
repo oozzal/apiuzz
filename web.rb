@@ -1,4 +1,3 @@
-require 'sinatra'
 require_relative './lib/uzz'
 
 class App < Sinatra::Base

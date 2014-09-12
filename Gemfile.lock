@@ -57,6 +57,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler
   capistrano
   capistrano-rvm
   capistrano3-unicorn
